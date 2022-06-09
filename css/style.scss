@@ -140,6 +140,7 @@ header {
       color: #fff;
       font-size: 2vw;
       text-align: center;
+      font-family: omnes-pro, sans-serif;
     }
 
     button:focus {
@@ -201,33 +202,37 @@ header {
         border-color 0.4s;
     }
 
-    .button-cta {
-      background-color: transparent;
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 7px 15px;
-      transition: background-color 0.4s, color 0.4s, opacity 0.4s,
-        border-color 0.4s;
-      cursor: pointer;
-      font-family: omnes-pro, sans-serif;
-      font-size: 20px;
-      font-weight: 400;
-      display: block;
-      margin: 5% auto 0;
-      @include respond-to("lg") {
-        font-size: 2vw;
-      }
-      @include respond-to("sm") {
-        padding: 5px 10px;
-      }
-      @include respond-to("s") {
-        margin: 2% auto 0;
-      }
-
-      &:hover {
-        background-color: #29664d;
-        border-color: #29664d;
+    a {
+      text-decoration: none;
+      .button-cta {
+        background-color: transparent;
+        background-color: transparent;
+        border: 1px solid #fff;
+        padding: 7px 15px;
         color: #fff;
+        transition: background-color 0.4s, color 0.4s, opacity 0.4s,
+          border-color 0.4s;
+        cursor: pointer;
+        font-family: omnes-pro, sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        display: block;
+        margin: 5% auto 0;
+        @include respond-to("lg") {
+          font-size: 2vw;
+        }
+        @include respond-to("sm") {
+          padding: 5px 10px;
+        }
+        @include respond-to("s") {
+          margin: 2% auto 0;
+        }
+
+        &:hover {
+          background-color: #29664d;
+          border-color: #29664d;
+          color: #fff;
+        }
       }
     }
   }
@@ -653,6 +658,221 @@ header {
     }
     @include respond-to("xl") {
       font-size: 2.75vw;
+    }
+  }
+}
+
+footer {
+  background-color: #29664d;
+  color: #fff;
+  font-size: 12px;
+  padding: 30px 15px;
+  position: relative;
+  @include respond-to("lg") {
+    padding: 40px 15px;
+  }
+
+  .information {
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    @include respond-to("lg") {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-social {
+      padding-left: 5px;
+      @include respond-to("lg") {
+        display: block;
+        margin: 0 auto 2%;
+      }
+      @include respond-to("sm") {
+        display: block;
+        margin: 0 auto 15%;
+      }
+
+      .hidden-lg-up {
+        display: none;
+        font-family: Montserrat, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        @include respond-to("lg") {
+          display: block;
+        }
+        @include respond-to("sm") {
+          font-size: 0.8rem;
+        }
+
+        span {
+          font-family: Arvo, serif;
+          font-weight: 400;
+          letter-spacing: normal;
+          text-transform: none;
+        }
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        @include respond-to("lg") {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
+
+        li {
+          a {
+            color: #fff;
+            margin: 0 2px;
+            padding: 0 8px;
+            font-size: 16px;
+            @include respond-to("lg") {
+              margin: 0 2px;
+              padding: 0 4px;
+            }
+            .fa {
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: inherit;
+              text-rendering: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-brand {
+      display: block;
+      margin: 0 auto;
+      .footer-brand-policy {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond-to("xxl") {
+          flex-direction: column;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 1rem;
+          font-family: Source Sans Pro, sans-serif;
+
+          span {
+            display: inline;
+            @include respond-to("lg") {
+              display: block;
+            }
+          }
+        }
+
+        .green-number {
+          margin: 0 4px;
+          width: 96px;
+          @include respond-to("lg") {
+            margin: 16px auto;
+            width: 133px;
+          }
+
+          a {
+            background-image: url(../image/green-number-bg.png);
+            background-size: cover;
+            color: #fff;
+            display: block;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 11px;
+            text-indent: 16px;
+            height: 32px;
+            line-height: 32px;
+            text-decoration: none;
+            transition: color 0.4s, opacity 0.4s;
+
+            &:hover {
+              opacity: 0.6;
+            }
+
+            @include respond-to("xl") {
+              font-size: 10px;
+              text-indent: 20px;
+            }
+            @include respond-to("lg") {
+              font-size: 14px;
+              height: 45px;
+              line-height: 45px;
+              text-indent: 12px;
+            }
+          }
+        }
+
+        ul {
+          list-style-type: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          @include respond-to("xs") {
+            flex-direction: column;
+          }
+
+          li {
+            a {
+              font-family: Source Sans Pro, sans-serif;
+              color: #fff;
+              letter-spacing: 1px;
+              margin: 0 2px;
+              transition: color 0.4s, opacity 0.4s;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .group-logo {
+    position: absolute;
+    top: 0;
+    transform: translateY(-85%);
+    height: 70px;
+    right: 15px;
+    width: 70px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.15);
+    @include respond-to("xl") {
+      height: 60px;
+      width: 60px;
+    }
+    @include respond-to("lg") {
+      transform: translateY(-115%);
+    }
+    @include respond-to("sm") {
+      height: 42px;
+      width: 42px;
+      right: 0px;
+    }
+
+    a {
+      color: #fff;
+      transition: color 0.4s, opacity 0.4s;
+      text-decoration: none;
+
+      img {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
     }
   }
 }
