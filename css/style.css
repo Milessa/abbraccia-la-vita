@@ -303,13 +303,6 @@ header {
   }
 }
 
-@media (max-aspect-ratio: 16 / 9) {
-  .video .embed-youtube iframe,
-  .video .embed-youtube video {
-    width: 177.78vh;
-  }
-}
-
 .card {
   padding-bottom: 35.5%;
   position: relative;
@@ -320,6 +313,12 @@ header {
 @media (max-width: 1245px) {
   .card {
     padding-bottom: 36%;
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    padding-bottom: 56%;
   }
 }
 
@@ -400,6 +399,20 @@ header {
 }
 
 @media (max-width: 1245px) {
+  .card .card_content-wrap .button-rounded,
+  .card .card_content-wrap .button.button-rounded {
+    margin-top: 6%;
+  }
+}
+
+@media (max-width: 992px) {
+  .card .card_content-wrap .button-rounded,
+  .card .card_content-wrap .button.button-rounded {
+    margin-top: 16%;
+  }
+}
+
+@media (max-width: 768px) {
   .card .card_content-wrap .button-rounded,
   .card .card_content-wrap .button.button-rounded {
     margin-top: 6%;
@@ -494,6 +507,13 @@ header {
 @media (max-width: 992px) {
   .card .card_content-wrap a .button-cta {
     font-size: 1rem;
+    margin-top: 12%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card .card_content-wrap a .button-cta {
+    margin-top: 19%;
   }
 }
 
@@ -501,7 +521,7 @@ header {
   .card .card_content-wrap a .button-cta {
     font-size: 0.8rem;
     padding: 5px 15px;
-    margin-top: 1%;
+    margin-top: 14%;
   }
 }
 
