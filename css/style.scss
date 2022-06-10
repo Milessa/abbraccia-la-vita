@@ -134,7 +134,8 @@ header {
     width: 100%;
     height: 100%;
 
-    iframe {
+    iframe,
+    video {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -149,6 +150,18 @@ header {
       // @media (max-aspect-ratio: 16/9) {
       //   width: 177.78vh;
       // }
+    }
+
+    #desktop {
+      @include respond-to("s") {
+        display: none;
+      }
+    }
+    #mobile {
+      display: none;
+      @include respond-to("s") {
+        display: revert;
+      }
     }
   }
 }

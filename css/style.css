@@ -286,7 +286,8 @@ header {
   height: 100%;
 }
 
-.video .embed-youtube iframe {
+.video .embed-youtube iframe,
+.video .embed-youtube video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -297,8 +298,25 @@ header {
 }
 
 @media (min-aspect-ratio: 16 / 9) {
-  .video .embed-youtube iframe {
+  .video .embed-youtube iframe,
+  .video .embed-youtube video {
     height: 56.25vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .video .embed-youtube #desktop {
+    display: none;
+  }
+}
+
+.video .embed-youtube #mobile {
+  display: none;
+}
+
+@media (max-width: 440px) {
+  .video .embed-youtube #mobile {
+    display: revert;
   }
 }
 
