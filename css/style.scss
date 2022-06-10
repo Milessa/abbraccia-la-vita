@@ -108,6 +108,25 @@ header {
   @include respond-to("xl") {
     margin-top: 5%;
   }
+
+  // .embed-youtube {
+  //   position: relative;
+  //   padding-bottom: 56.25%;
+  //   padding-top: 30px;
+  //   height: 0;
+  //   overflow: hidden;
+  // }
+
+  .embed-youtube iframe,
+  .embed-youtube object,
+  .embed-youtube embed {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .card {
@@ -141,6 +160,15 @@ header {
       font-size: 2vw;
       text-align: center;
       font-family: omnes-pro, sans-serif;
+      @include respond-to("sm") {
+        font-size: 1rem;
+      }
+      @include respond-to("s") {
+        font-size: 0.8rem;
+      }
+      @include respond-to("xs") {
+        font-size: 0.6rem;
+      }
     }
 
     button:focus {
@@ -214,18 +242,29 @@ header {
           border-color 0.4s;
         cursor: pointer;
         font-family: omnes-pro, sans-serif;
-        font-size: 20px;
+        font-size: 1.8rem;
         font-weight: 400;
         display: block;
-        margin: 5% auto 0;
+        margin: 30% auto 0;
+        @include respond-to("xl") {
+          font-size: 1.4rem;
+        }
         @include respond-to("lg") {
-          font-size: 2vw;
+          font-size: 1rem;
+          margin-top: 27%;
+        }
+        @include respond-to("md") {
+          margin-top: 14%;
         }
         @include respond-to("sm") {
-          padding: 5px 10px;
+          font-size: 0.8rem;
+          padding: 5px 15px;
         }
         @include respond-to("s") {
-          margin: 2% auto 0;
+          margin-top: 13%;
+        }
+        @include respond-to("xs") {
+          font-size: 0.6rem;
         }
 
         &:hover {
@@ -356,7 +395,7 @@ header {
   display: flex;
   justify-content: space-between;
 
-  @include respond-to("sm") {
+  @include respond-to("md") {
     flex-direction: column;
     align-items: center;
   }
@@ -365,24 +404,40 @@ header {
     width: 48%;
     max-width: 100%;
     object-fit: cover;
-    @include respond-to("sm") {
+
+    background-image: url(../image/block2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 30%;
+    background-position-y: bottom;
+
+    @include respond-to("md") {
+      background-image: none;
       width: 100%;
+      order: 2;
+      padding-top: 3%;
     }
 
     img {
+      display: none;
       width: 100%;
       max-width: 100%;
+
+      @include respond-to("md") {
+        display: block;
+      }
     }
   }
   .about-right {
     width: 48%;
     max-width: 100%;
     padding-right: 1.2%;
-    @include respond-to("sm") {
+    @include respond-to("md") {
       width: 100%;
       padding-right: 0;
       padding-top: 5%;
       text-align: center;
+      order: 1;
     }
 
     h3 {
@@ -399,9 +454,9 @@ header {
         line-height: 4vw;
       }
       @include respond-to("md") {
-        font-size: 3vw;
-        line-height: 3vw;
-        margin-bottom: 1rem;
+        font-size: 5vw;
+        line-height: 6vw;
+        margin-bottom: 2rem;
       }
       @include respond-to("sm") {
         font-size: 5vw;
@@ -427,9 +482,10 @@ header {
         line-height: 2vw;
       }
       @include respond-to("md") {
-        font-size: 1vw;
-        line-height: 1.4vw;
+        font-size: 1rem;
+        line-height: 1.3rem;
         margin-bottom: 1rem;
+        text-align: left;
       }
       @include respond-to("sm") {
         font-size: 3vw;
@@ -451,6 +507,7 @@ header {
     font-size: 3.5vw;
     font-weight: 700;
     font-family: omnes-pro, sans-serif;
+    letter-spacing: 2px;
     color: $primary;
     text-align: center;
     @include respond-to("xl") {
@@ -458,9 +515,10 @@ header {
       line-height: 4vw;
     }
     @include respond-to("md") {
-      font-size: 3vw;
-      line-height: 3vw;
-      margin-bottom: 1rem;
+      font-size: 6vw;
+      line-height: 7vw;
+      margin-bottom: 4rem;
+      margin-top: 4rem;
     }
     @include respond-to("sm") {
       font-size: 5vw;
@@ -471,6 +529,7 @@ header {
       font-size: 6vw;
       line-height: 6vw;
       margin-bottom: 2rem;
+      margin-top: 2rem;
     }
   }
 
@@ -482,16 +541,28 @@ header {
     max-width: 100%;
     margin: 5% 0;
 
+    @include respond-to("xxl") {
+      margin-bottom: 7%;
+    }
+
+    @include respond-to("xxl") {
+      margin-bottom: 5%;
+    }
+
     @include respond-to("md") {
       flex-direction: column;
+      margin-bottom: -10%;
     }
 
     .item {
-      max-height: 100%;
-      height: 500px;
-      width: 100%;
       margin: 0 1%;
       box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.4);
+      border-radius: 7px;
+
+      max-height: 100%;
+      height: 400px;
+      width: 100%;
+
       @include respond-to("xxl") {
         height: 350px;
       }
@@ -500,32 +571,38 @@ header {
       }
       @include respond-to("md") {
         height: 350px;
-        margin-bottom: 8%;
+        width: 70%;
+        margin-bottom: 28%;
+      }
+      @include respond-to("sm") {
+        width: 75%;
+      }
+      @include respond-to("s") {
+        width: 80%;
+        height: 300px;
+      }
+      @include respond-to("xs") {
+        width: 90%;
+        margin-bottom: 35%;
       }
 
-      &:nth-child(1) {
-        background-image: url(../image/lp-spray-bg.jpg);
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      &:nth-child(2) {
-        background-image: url(../image/lp-vapo-bg.jpg);
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      &:nth-child(3) {
-        background-image: url(../image/lp-rollon-bg.jpg);
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      &:nth-child(4) {
-        background-image: url(../image/lp-stick-bg.jpg);
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
+      img {
+        height: 400px;
+        width: 100%;
+        object-fit: contain;
+
+        @include respond-to("xxl") {
+          height: 350px;
+        }
+        @include respond-to("lg") {
+          height: 300px;
+        }
+        @include respond-to("md") {
+          height: 350px;
+        }
+        @include respond-to("s") {
+          height: 300px;
+        }
       }
 
       a {
@@ -550,15 +627,16 @@ header {
         font-weight: 400;
         display: block;
         margin: 10% auto;
-        top: 75%;
-        position: relative;
-        @include respond-to("md") {
-          font-size: 5.5vw;
-          top: 65%;
+        @include respond-to("xxl") {
+          font-size: 2.5vw;
         }
-        @include respond-to("s") {
-          top: 85%;
-          margin: 0 auto;
+        @include respond-to("md") {
+          font-size: 6.5vw;
+          margin: 5% auto;
+          padding: 0px 6.5vw 0.25vw;
+        }
+        @include respond-to("xs") {
+          font-size: 7.5vw;
         }
 
         &:hover {
@@ -695,7 +773,7 @@ footer {
       }
       @include respond-to("sm") {
         display: block;
-        margin: 0 auto 15%;
+        margin: 0 auto 10%;
       }
 
       .hidden-lg-up {
