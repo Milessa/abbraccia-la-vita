@@ -292,7 +292,6 @@ header {
   top: 50%;
   left: 50%;
   width: 100%;
-  height: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -304,19 +303,10 @@ header {
   }
 }
 
-@media (max-width: 440px) {
-  .video .embed-youtube #desktop {
-    display: none;
-  }
-}
-
-.video .embed-youtube #mobile {
-  display: none;
-}
-
-@media (max-width: 440px) {
-  .video .embed-youtube #mobile {
-    display: revert;
+@media (max-aspect-ratio: 16 / 9) {
+  .video .embed-youtube iframe,
+  .video .embed-youtube video {
+    width: 177.78vh;
   }
 }
 
@@ -327,21 +317,9 @@ header {
   transition: padding-bottom 0.5s;
 }
 
-@media (max-width: 1703px) {
-  .card {
-    padding-bottom: 56.5%;
-  }
-}
-
 @media (max-width: 1245px) {
   .card {
-    padding-bottom: 56.5%;
-  }
-}
-
-@media (max-width: 992px) {
-  .card {
-    padding-bottom: 56%;
+    padding-bottom: 36%;
   }
 }
 
@@ -417,28 +395,14 @@ header {
 @media (max-width: 1703px) {
   .card .card_content-wrap .button-rounded,
   .card .card_content-wrap .button.button-rounded {
-    margin-top: 175px;
+    margin-top: 13%;
   }
 }
 
 @media (max-width: 1245px) {
   .card .card_content-wrap .button-rounded,
   .card .card_content-wrap .button.button-rounded {
-    margin-top: 85px;
-  }
-}
-
-@media (max-width: 768px) {
-  .card .card_content-wrap .button-rounded,
-  .card .card_content-wrap .button.button-rounded {
-    margin-top: 45px;
-  }
-}
-
-@media (max-width: 350px) {
-  .card .card_content-wrap .button-rounded,
-  .card .card_content-wrap .button.button-rounded {
-    margin-top: 15px;
+    margin-top: 6%;
   }
 }
 
@@ -517,13 +481,12 @@ header {
 
 @media (max-width: 1703px) {
   .card .card_content-wrap a .button-cta {
-    margin: 27% auto 0;
+    margin: 9% auto 0;
   }
 }
 
 @media (max-width: 1245px) {
   .card .card_content-wrap a .button-cta {
-    margin-top: 20%;
     font-size: 1.4rem;
   }
 }
@@ -534,29 +497,17 @@ header {
   }
 }
 
-@media (max-width: 768px) {
-  .card .card_content-wrap a .button-cta {
-    margin-top: 13%;
-  }
-}
-
 @media (max-width: 576px) {
   .card .card_content-wrap a .button-cta {
     font-size: 0.8rem;
     padding: 5px 15px;
-  }
-}
-
-@media (max-width: 440px) {
-  .card .card_content-wrap a .button-cta {
-    margin-top: 8%;
+    margin-top: 1%;
   }
 }
 
 @media (max-width: 350px) {
   .card .card_content-wrap a .button-cta {
     font-size: 0.6rem;
-    margin-top: 12%;
   }
 }
 
