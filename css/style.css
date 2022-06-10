@@ -279,15 +279,33 @@ header {
   }
 }
 
-.video .embed-youtube iframe,
-.video .embed-youtube object,
-.video .embed-youtube embed {
-  border: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+.video .embed-youtube {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
+}
+
+.video .embed-youtube iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+  .video .embed-youtube iframe {
+    height: 56.25vw;
+  }
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+  .video .embed-youtube iframe {
+    width: 177.78vh;
+  }
 }
 
 .card {
