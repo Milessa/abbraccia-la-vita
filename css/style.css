@@ -394,11 +394,7 @@ header {
 }
 
 .card .card_content-wrap .pause {
-  background-image: url("http://borotalco.fabricandum.com/wp-content/themes/yr-borotalco/assets/images/icons/icon_PAUSE.png");
-}
-
-.card .card_content-wrap .play {
-  background-image: url("http://borotalco.fabricandum.com/wp-content/themes/yr-borotalco/assets/images/icons/icon_PLAY.png");
+  background-image: url(../image/icon_PAUSE.png);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -418,10 +414,31 @@ header {
   margin-top: 15%;
 }
 
+@media (max-width: 1703px) {
+  .card .card_content-wrap .button-rounded,
+  .card .card_content-wrap .button.button-rounded {
+    margin-top: 175px;
+  }
+}
+
 @media (max-width: 1245px) {
   .card .card_content-wrap .button-rounded,
   .card .card_content-wrap .button.button-rounded {
-    margin-top: 0;
+    margin-top: 85px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card .card_content-wrap .button-rounded,
+  .card .card_content-wrap .button.button-rounded {
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 350px) {
+  .card .card_content-wrap .button-rounded,
+  .card .card_content-wrap .button.button-rounded {
+    margin-top: 15px;
   }
 }
 
@@ -431,8 +448,20 @@ header {
 }
 
 .card .card_content-wrap .button-play {
+  cursor: pointer;
   height: 106px;
   width: 106px;
+  background-image: url(../image/icon_PLAY.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 992px) {
+  .card .card_content-wrap .button-play {
+    height: 66px;
+    width: 66px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -483,18 +512,18 @@ header {
   font-size: 1.8rem;
   font-weight: 400;
   display: block;
-  margin: 30% auto 0;
+  margin: 10% auto 0;
 }
 
 @media (max-width: 1703px) {
   .card .card_content-wrap a .button-cta {
-    margin: 57% auto 0;
+    margin: 27% auto 0;
   }
 }
 
 @media (max-width: 1245px) {
   .card .card_content-wrap a .button-cta {
-    margin-top: 60%;
+    margin-top: 20%;
     font-size: 1.4rem;
   }
 }
@@ -502,13 +531,12 @@ header {
 @media (max-width: 992px) {
   .card .card_content-wrap a .button-cta {
     font-size: 1rem;
-    margin-top: 50%;
   }
 }
 
 @media (max-width: 768px) {
   .card .card_content-wrap a .button-cta {
-    margin-top: 30%;
+    margin-top: 13%;
   }
 }
 
@@ -521,13 +549,14 @@ header {
 
 @media (max-width: 440px) {
   .card .card_content-wrap a .button-cta {
-    margin-top: 28%;
+    margin-top: 8%;
   }
 }
 
 @media (max-width: 350px) {
   .card .card_content-wrap a .button-cta {
     font-size: 0.6rem;
+    margin-top: 12%;
   }
 }
 
@@ -641,6 +670,7 @@ header {
 @media (max-width: 768px) {
   .card .button-volume {
     width: auto;
+    margin-right: 25px;
   }
 }
 
@@ -650,7 +680,11 @@ header {
 }
 
 .card .button-volume .fa-volume-off {
-  display: none;
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  left: 10%;
+  top: 5%;
 }
 
 .card .button-volume .fa-volume-off::before {
@@ -659,6 +693,8 @@ header {
 
 .card .button-volume .fa-volume-up {
   display: block;
+  position: absolute;
+  top: 5%;
 }
 
 .card .button-volume .fa-volume-up::before {
