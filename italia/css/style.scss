@@ -15,15 +15,6 @@
   padding-left: 15px;
   padding-right: 15px;
 
-  // @include respond-to("xl") {
-  //   width: 990px;
-  // }
-  // @include respond-to("lg") {
-  //   width: 960px;
-  // }
-  // @include respond-to("md") {
-  //   width: 720px;
-  // }
   @include respond-to("sm") {
     width: 94%;
   }
@@ -108,26 +99,6 @@ header {
   @include respond-to("xl") {
     margin-top: 5%;
   }
-
-  // .embed-youtube {
-  //   position: relative;
-  //   padding-bottom: 56.25%;
-  //   padding-top: 30px;
-  //   height: 0;
-  //   overflow: hidden;
-  // }
-
-  // .embed-youtube iframe,
-  // .embed-youtube object,
-  // .embed-youtube embed {
-  //   border: 0;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  // }
-
   .embed-youtube {
     position: relative;
     overflow: hidden;
@@ -140,16 +111,11 @@ header {
       top: 50%;
       left: 50%;
       width: 100%;
-      // height: 100%;
       transform: translate(-50%, -50%);
 
       @media (min-aspect-ratio: 16/9) {
         height: 56.25vw;
       }
-
-      // @media (max-aspect-ratio: 16/9) {
-      //   width: 177.78vh;
-      // }
     }
   }
 }
@@ -162,12 +128,6 @@ header {
   @include respond-to("xxl") {
     padding-bottom: 36%;
   }
-  // @media (max-width: 1703px) {
-  //   padding-bottom: 56.5%;
-  // }
-  // @include respond-to("xxl") {
-  //   padding-bottom: 56.5%;
-  // }
   @include respond-to("lg") {
     padding-bottom: 56%;
   }
@@ -238,9 +198,6 @@ header {
       @include respond-to("md") {
         margin-top: 6%;
       }
-      // @include respond-to("xs") {
-      //   margin-top: 15px;
-      // }
 
       &:hover {
         opacity: 1;
@@ -302,7 +259,6 @@ header {
           margin: 9% auto 0;
         }
         @include respond-to("xxl") {
-          // margin-top: 20%;
           font-size: 1.4rem;
         }
         @include respond-to("lg") {
@@ -317,12 +273,8 @@ header {
           padding: 5px 15px;
           margin-top: 14%;
         }
-        @include respond-to("s") {
-          // margin-top: 8%;
-        }
         @include respond-to("xs") {
           font-size: 0.6rem;
-          // margin-top: 12%;
         }
 
         &:hover {
