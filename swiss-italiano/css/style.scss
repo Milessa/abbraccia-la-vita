@@ -1,0 +1,984 @@
+@import "normalize";
+@import "globals";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 85.65%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include respond-to("sm") {
+    width: 94%;
+  }
+  @include respond-to("s") {
+    width: 98%;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 85.65vw;
+  padding: 5vw 1.5vw 0;
+  @include respond-to("xxl") {
+    padding: 5vw 1.5vw 0;
+  }
+  @include respond-to("xl") {
+    padding: 10vw 0 0;
+    width: 100%;
+  }
+}
+
+header {
+  position: relative;
+}
+
+.header-wrapper {
+  margin: 0 auto;
+  width: 85.65vw;
+  padding: 2.5vw 9vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include respond-to("xl") {
+    flex-direction: column;
+  }
+
+  .logo {
+    background-image: url(../image/logo-bt.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    margin: 0 25% 0 0;
+    width: 14rem;
+
+    @include respond-to("xl") {
+      width: 60%;
+      margin: 0 auto 5%;
+    }
+    @include respond-to("s") {
+      width: 80%;
+      margin: 5% auto;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0;
+      padding-bottom: 22.53%;
+      width: 100%;
+    }
+  }
+
+  span {
+    font-family: omnes-pro, sans-serif;
+    color: $primary;
+    font-weight: 700;
+    font-size: 2.190476rem;
+    line-height: 2.190476rem;
+
+    @include respond-to("lg") {
+      font-size: 7vw;
+    }
+    @include respond-to("s") {
+      font-size: 10vw;
+    }
+  }
+}
+
+.video {
+  @include respond-to("xl") {
+    margin-top: 5%;
+  }
+  .embed-youtube {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    iframe,
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+
+      @media (min-aspect-ratio: 16/9) {
+        height: 56.25vw;
+      }
+    }
+  }
+}
+
+.card {
+  padding-bottom: 35.5%;
+  position: relative;
+  transition: padding-bottom 0.5s;
+
+  @include respond-to("xxl") {
+    padding-bottom: 36%;
+  }
+  @include respond-to("lg") {
+    padding-bottom: 56%;
+  }
+
+  .card_content-wrap {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 35%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 70%;
+    z-index: 2;
+
+    @include respond-to("md") {
+      width: 100%;
+    }
+
+    .card_title-hero {
+      text-shadow: 0 0 10px #000;
+      color: #fff;
+      font-size: 2vw;
+      text-align: center;
+      font-family: omnes-pro, sans-serif;
+      @include respond-to("sm") {
+        font-size: 1rem;
+      }
+      @include respond-to("s") {
+        font-size: 0.8rem;
+      }
+      @include respond-to("xs") {
+        font-size: 0.6rem;
+      }
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    .pause {
+      background-image: url(../image/icon_PAUSE.png);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .button-rounded,
+    .button.button-rounded {
+      border: none;
+      display: inline-block;
+      opacity: 0;
+      height: 56px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      width: 56px;
+      margin-top: 10%;
+      @media (max-width: 1703px) {
+        margin-top: 13%;
+      }
+      @include respond-to("xxl") {
+        margin-top: 6%;
+      }
+      @include respond-to("lg") {
+        margin-top: 16%;
+      }
+      @include respond-to("md") {
+        margin-top: 14%;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .button-play {
+      cursor: pointer;
+      height: 106px;
+      width: 106px;
+
+      background-image: url(../image/icon_PLAY.png);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include respond-to("lg") {
+        height: 66px;
+        width: 66px;
+      }
+
+      @include respond-to("md") {
+        height: 50px;
+        width: 50px;
+      }
+      @include respond-to("sm") {
+        height: 30px;
+        width: 30px;
+      }
+      @include respond-to("xs") {
+        height: 20px;
+        width: 20px;
+      }
+    }
+    .button-transparent {
+      background-color: transparent !important;
+    }
+    .button,
+    button {
+      transition: background-color 0.4s, color 0.4s, opacity 0.4s,
+        border-color 0.4s;
+    }
+
+    a {
+      text-decoration: none;
+      .button-cta {
+        background-color: transparent;
+        background-color: transparent;
+        border: 1px solid #fff;
+        padding: 7px 15px;
+        color: #fff;
+        transition: background-color 0.4s, color 0.4s, opacity 0.4s,
+          border-color 0.4s;
+        cursor: pointer;
+        font-family: omnes-pro, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+        display: block;
+        margin: 10% auto 0;
+        @media (max-width: 1703px) {
+          margin: 9% auto 0;
+        }
+        @include respond-to("xxl") {
+          font-size: 1.4rem;
+        }
+        @include respond-to("lg") {
+          font-size: 1rem;
+          margin-top: 12%;
+        }
+        @include respond-to("md") {
+          margin-top: 19%;
+        }
+        @include respond-to("sm") {
+          font-size: 0.8rem;
+          padding: 5px 15px;
+          margin-top: 14%;
+        }
+        @include respond-to("xs") {
+          font-size: 0.6rem;
+        }
+
+        &:hover {
+          background-color: #29664d;
+          border-color: #29664d;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .card-full-link {
+    background: #e0e0e0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+    .bg-image {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    .fadeIn.lazyloaded {
+      opacity: 1;
+    }
+    .fadeIn.lazyloaded {
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .bg-shader-flat {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      background-color: #000;
+      opacity: 0.2;
+    }
+
+    .bg-video-wrap {
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .bg-video {
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: none;
+      z-index: 1;
+
+      @include respond-to("xl") {
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        z-index: 1;
+      }
+      @include respond-to("md") {
+        transform: translate(-25%);
+        top: 0;
+        overflow: hidden;
+        height: 100%;
+      }
+    }
+  }
+
+  .button-volume {
+    bottom: 10px;
+    display: block;
+    height: 27px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    text-align: left;
+    width: 27px;
+    z-index: 10;
+    background-color: transparent !important;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s, opacity 0.4s,
+      border-color 0.4s;
+
+    @include respond-to("md") {
+      width: auto;
+      margin-right: 25px;
+    }
+
+    .fa {
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 1.125rem;
+    }
+    .fa-volume-off {
+      display: block;
+      visibility: hidden;
+      position: absolute;
+      left: 10%;
+      top: 5%;
+
+      &::before {
+        content: "";
+      }
+    }
+
+    .fa-volume-up {
+      display: block;
+      position: absolute;
+      top: 5%;
+      &::before {
+        content: "";
+      }
+    }
+  }
+}
+
+.about {
+  margin: 5% 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond-to("md") {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-left {
+    width: 48%;
+    max-width: 100%;
+    object-fit: cover;
+
+    background-image: url(../image/block2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 30%;
+    background-position-y: bottom;
+
+    @include respond-to("md") {
+      background-image: none;
+      width: 100%;
+      order: 2;
+      padding-top: 3%;
+    }
+
+    img {
+      display: none;
+      width: 100%;
+      max-width: 100%;
+
+      @include respond-to("md") {
+        display: block;
+      }
+    }
+  }
+  .about-right {
+    width: 48%;
+    max-width: 100%;
+    padding-right: 1.2%;
+    @include respond-to("md") {
+      width: 100%;
+      padding-right: 0;
+      padding-top: 5%;
+      text-align: center;
+      order: 1;
+    }
+
+    h3 {
+      font-size: 3rem;
+      line-height: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      font-family: omnes-pro, sans-serif;
+      color: $primary;
+
+      @include respond-to("xl") {
+        font-size: 4vw;
+        line-height: 4vw;
+      }
+      @include respond-to("md") {
+        font-size: 5vw;
+        line-height: 6vw;
+        margin-bottom: 2rem;
+      }
+      @include respond-to("sm") {
+        font-size: 5vw;
+        line-height: 5vw;
+        margin-bottom: 2rem;
+      }
+      @include respond-to("s") {
+        font-size: 6vw;
+        line-height: 6vw;
+        margin-bottom: 1rem;
+      }
+    }
+    p {
+      font-size: 1.3rem;
+      line-height: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      font-family: omnes-pro, Helvetica, Arial, sans-serif;
+      color: $primary;
+
+      @include respond-to("xl") {
+        font-size: 2vw;
+        line-height: 2vw;
+      }
+      @include respond-to("md") {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+      @include respond-to("sm") {
+        font-size: 3vw;
+        line-height: 4vw;
+        text-align: left;
+        margin-bottom: 1.5rem;
+      }
+      @include respond-to("s") {
+        font-size: 4vw;
+        line-height: 5.5vw;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.products {
+  h2 {
+    font-size: 3.5vw;
+    font-weight: 700;
+    font-family: omnes-pro, sans-serif;
+    letter-spacing: 2px;
+    color: $primary;
+    text-align: center;
+    @include respond-to("xl") {
+      font-size: 4vw;
+      line-height: 4vw;
+    }
+    @include respond-to("md") {
+      font-size: 6vw;
+      line-height: 7vw;
+      margin-bottom: 4rem;
+      margin-top: 4rem;
+    }
+    @include respond-to("sm") {
+      font-size: 5vw;
+      line-height: 5vw;
+      margin-bottom: 2rem;
+    }
+    @include respond-to("s") {
+      font-size: 6vw;
+      line-height: 6vw;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 5% 0;
+
+    @include respond-to("xxl") {
+      margin-bottom: 7%;
+    }
+
+    @include respond-to("xxl") {
+      margin-bottom: 5%;
+    }
+
+    @include respond-to("md") {
+      flex-direction: column;
+      margin-bottom: -10%;
+    }
+
+    .item {
+      position: relative;
+      margin: 0 1%;
+      box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.4);
+      border-radius: 7px;
+
+      max-height: 100%;
+      height: 400px;
+      width: 100%;
+
+      @include respond-to("xxl") {
+        height: 350px;
+      }
+      @include respond-to("lg") {
+        height: 300px;
+      }
+      @include respond-to("md") {
+        height: 350px;
+        width: 70%;
+        margin-bottom: 8%;
+      }
+      @include respond-to("sm") {
+        width: 75%;
+      }
+      @include respond-to("s") {
+        width: 80%;
+        height: 300px;
+      }
+      @include respond-to("xs") {
+        width: 90%;
+        margin-bottom: 35%;
+      }
+
+      img {
+        height: 400px;
+        width: 100%;
+        object-fit: contain;
+
+        @include respond-to("xxl") {
+          height: 350px;
+        }
+        @include respond-to("lg") {
+          height: 300px;
+        }
+        @include respond-to("md") {
+          height: 350px;
+        }
+        @include respond-to("s") {
+          height: 300px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        position: absolute;
+        bottom: 5%;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .button-cta {
+        background-color: transparent;
+        border: 2px solid $primary;
+        color: $primary;
+        padding: 0 2.5vw 0.25vw;
+        transition: background-color 0.4s, color 0.4s, opacity 0.4s,
+          border-color 0.4s;
+        cursor: pointer;
+        font-family: omnes-pro, sans-serif;
+        font-size: 1.5vw;
+        font-weight: 400;
+        display: block;
+        margin: 0 auto;
+        @include respond-to("xxl") {
+          font-size: 2vw;
+        }
+        @include respond-to("md") {
+          font-size: 4.5vw;
+          padding: 0px 6.5vw 0.25vw;
+        }
+        @include respond-to("sm") {
+          font-size: 5vw;
+          padding: 0px 6.5vw 0.25vw;
+        }
+        @include respond-to("s") {
+          font-size: 6vw;
+        }
+        @include respond-to("xs") {
+          font-size: 7vw;
+        }
+
+        &:hover {
+          background-color: $primary;
+          border-color: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.big-list {
+  margin: 0;
+  @include respond-to("xl") {
+    margin: 0 0 104px;
+  }
+  @include respond-to("lg") {
+    margin: 0 0 88px;
+  }
+  @include respond-to("md") {
+    margin: 0 0 64px;
+  }
+  @include respond-to("sm") {
+    margin: 0 0 40px;
+  }
+
+  h2 {
+    line-height: 1;
+    letter-spacing: normal;
+    color: $primary;
+    font-family: omnes-pro, Helvetica, Arial, sans-serif;
+    font-size: 3.5vw;
+    font-weight: 700 !important;
+    text-align: center;
+    padding: 0 0 5vw;
+    @include respond-to("xxl") {
+      padding: 0 1.5vw 5vw;
+    }
+    @include respond-to("xl") {
+      font-size: 8vw;
+      padding: 1.5vw 3vw 10vw;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    column-count: 3;
+    column-gap: 3vw;
+    padding: 0 1.5vw;
+    @include respond-to("xl") {
+      column-count: 2;
+      column-gap: 4vw;
+      padding: 0 4vw;
+    }
+
+    li {
+      list-style-type: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: omnes-pro, Helvetica, Arial, sans-serif;
+      font-size: 1.5vw;
+      padding: 0 0 0.5vw;
+      @include respond-to("xl") {
+        font-size: 3vw;
+      }
+      @include respond-to("md") {
+        font-size: 3.25vw;
+        padding: 0 0 2vw;
+      }
+
+      &::before {
+        color: #cd112a;
+        content: "> ";
+      }
+
+      a {
+        color: #000;
+        transition: color 0.25s ease;
+        text-decoration: none;
+        @include respond-to("xl") {
+          transition: color 0.4s, opacity 0.4s;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 3vw 3vw 5vw;
+    font-family: omnes-pro, Helvetica, Arial, sans-serif;
+    text-align: center;
+    line-height: 150%;
+    margin: 0;
+    @include respond-to("xxl") {
+      font-size: 1.25vw;
+    }
+    @include respond-to("xl") {
+      font-size: 2.75vw;
+    }
+  }
+}
+
+footer {
+  background-color: #29664d;
+  color: #fff;
+  font-size: 12px;
+  padding: 30px 15px;
+  position: relative;
+  @include respond-to("lg") {
+    padding: 40px 15px;
+  }
+
+  .information {
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    @include respond-to("lg") {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-social {
+      padding-left: 5px;
+      @include respond-to("lg") {
+        display: block;
+        margin: 0 auto 2%;
+      }
+      @include respond-to("sm") {
+        display: block;
+        margin: 0 auto 10%;
+      }
+
+      .hidden-lg-up {
+        display: none;
+        font-family: Montserrat, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        @include respond-to("lg") {
+          display: block;
+        }
+        @include respond-to("sm") {
+          font-size: 0.8rem;
+        }
+
+        span {
+          font-family: Arvo, serif;
+          font-weight: 400;
+          letter-spacing: normal;
+          text-transform: none;
+        }
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        @include respond-to("lg") {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
+
+        li {
+          a {
+            color: #fff;
+            margin: 0 2px;
+            padding: 0 8px;
+            font-size: 16px;
+            @include respond-to("lg") {
+              margin: 0 2px;
+              padding: 0 4px;
+            }
+            .fa {
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: inherit;
+              text-rendering: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-brand {
+      display: block;
+      margin: 0 auto;
+      .footer-brand-policy {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond-to("xxl") {
+          flex-direction: column;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 1rem;
+          font-family: Source Sans Pro, sans-serif;
+
+          span {
+            display: inline;
+            @include respond-to("lg") {
+              display: block;
+            }
+          }
+        }
+
+        .green-number {
+          margin: 0 4px;
+          width: 96px;
+          @include respond-to("lg") {
+            margin: 16px auto;
+            width: 133px;
+          }
+
+          a {
+            background-image: url(../image/green-number-bg.png);
+            background-size: cover;
+            color: #fff;
+            display: block;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 11px;
+            text-indent: 16px;
+            height: 32px;
+            line-height: 32px;
+            text-decoration: none;
+            transition: color 0.4s, opacity 0.4s;
+
+            &:hover {
+              opacity: 0.6;
+            }
+
+            @include respond-to("xl") {
+              font-size: 10px;
+              text-indent: 20px;
+            }
+            @include respond-to("lg") {
+              font-size: 14px;
+              height: 45px;
+              line-height: 45px;
+              text-indent: 12px;
+            }
+          }
+        }
+
+        ul {
+          list-style-type: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          @include respond-to("xs") {
+            flex-direction: column;
+          }
+
+          li {
+            a {
+              font-family: Source Sans Pro, sans-serif;
+              color: #fff;
+              letter-spacing: 1px;
+              margin: 0 2px;
+              transition: color 0.4s, opacity 0.4s;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .group-logo {
+    position: absolute;
+    top: 0;
+    transform: translateY(-85%);
+    height: 70px;
+    right: 15px;
+    width: 70px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.15);
+    @include respond-to("xl") {
+      height: 60px;
+      width: 60px;
+    }
+    @include respond-to("lg") {
+      transform: translateY(-115%);
+    }
+    @include respond-to("sm") {
+      height: 42px;
+      width: 42px;
+      right: 0px;
+    }
+
+    a {
+      color: #fff;
+      transition: color 0.4s, opacity 0.4s;
+      text-decoration: none;
+
+      img {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}
