@@ -9,12 +9,11 @@ window.onload = function () {
   playButton.addEventListener("click", function () {
     if (video.paused == true) {
       video.play();
-      playButton.style.backgroundImage = "url('../italia/image/icon_PLAY.png')";
+      playButton.style.backgroundImage = "url('image/icon_PLAY.png')";
     } else {
       video.pause();
-      playButton.style.backgroundImage = "url('../italia/image/icon_PLAY.png')";
-      playButton.style.backgroundImage =
-        "url('../italia/image/icon_PAUSE.png')";
+      playButton.style.backgroundImage = "url('image/icon_PLAY.png')";
+      playButton.style.backgroundImage = "url('image/icon_PAUSE.png')";
     }
   });
 
